@@ -1,5 +1,5 @@
 {
-  "name": "react-minimal-side-navigation-example",
+  "name": "react-tailwind-boilerplate",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,23 +8,23 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@testing-library/jest-dom": "5.11.5",
-    "@testing-library/react": "11.1.1",
-    "@testing-library/user-event": "12.2.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "awesome-react-icons": "1.3.3",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-icons": "^4.6.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-minimal-side-navigation": "1.9.2",
     "react-router-dom": "5.2.0",
-    "react-scripts": "^4.0.0",
-    "tailwindcss": "1.9.6"
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "dev": "concurrently \"yarn tailwind:css\" \"yarn start\"",
     "start": "react-scripts start",
-    "build": "yarn watch:css && react-scripts build",
+    "tailwind:css": "postcss ./src/styles/tailwind.css -o ./src/styles/index.css --watch",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "watch:css": "postcss src/styles/main.css -o src/styles/main.bundle.css",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -46,10 +46,10 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.0.1",
-    "postcss": "^8.1.4",
-    "postcss-cli": "^8.1.0"
-  },
-  "keywords": [],
-  "description": ""
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^6.4.0",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "tailwindcss": "^3.0.2"
+  }
 }

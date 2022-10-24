@@ -1,8 +1,30 @@
-# Getting Started with Create React App
+# React v17 + Tailwind Css v3 Starter Template
+
+This is a simple Reactjs & TailwindCSS template with all the dependencies already set up and ready to go for development.
+
+**Modules and libraries pre-installed in this template**:
+- react (Core library for this template.)
+- tailwindcss (A utility-first CSS framework.)
+- postcss (Transform CSS with the power of JavaScript.)
+- postcss-cli (For installing Tailwind CSS as a PostCSS plugin.)
+- autoprefixer (PostCSS plugin to parse CSS and add vendor prefixes to CSS rules.)
+- concurrently (Run multiple commands concurrently.)
+
+## Getting Started
+
+First, install dependencies & run the development server:
+
+```bash
+npm install && npm run start
+# or
+yarn install && yarn start
+```
+
+## Usage
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 

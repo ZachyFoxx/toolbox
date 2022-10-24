@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import TimeUtils from "./timeutils";
-import DiscordTimestampGenerator from "./discord/timestamp-generator";
-import DiscordIdToUser from "./discord/id-to-user";
-import HomePage from "./home";
+import TimeUtils from "./pages/timeutils";
+import DiscordTimestampGenerator from "./pages/discord/timestamp-generator";
+import DiscordIdToUser from "./pages/discord/id-to-user";
+import HomePage from "./pages/home";
 
 const Routes = () => {
   return (

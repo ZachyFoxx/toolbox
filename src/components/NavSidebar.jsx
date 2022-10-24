@@ -1,12 +1,11 @@
-/* eslint-disable react/display-name, jsx-a11y/click-events-have-key-events */
 import { Navigation } from "react-minimal-side-navigation";
 import { useHistory, useLocation } from "react-router-dom";
-import { faDiscord } from '@fortawesome/free-brands-svg-icons'
-import { faUser, faClock, faBars } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDiscord } from "@fortawesome/free-brands-svg-icons";
+import { faUser, faClock, faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 
-import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
+import "../styles/navbar.css";
 
 export const NavSidebar = () => {
   const history = useHistory();
@@ -23,24 +22,26 @@ export const NavSidebar = () => {
         }`}
       />
       <div>
-        <button
-          className="btn-menu"
-          onClick={(): void => setIsSidebarOpen(true)}
-          type="button"
-        >
-          <FontAwesomeIcon icon={faBars} />
-        </button>
+        <div className={`lg:hidden ${isSidebarOpen ? "block" : "hidden"}`}>
+          <button
+            className="btn-menu"
+            onClick={() => setIsSidebarOpen(true) }
+            type="button"
+          >
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+        </div>
       </div>
 
       {/* Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 ease-out transform translate-x-0 bg-white border-r-2 lg:translate-x-0 lg:static lg:inset-0 ${
+        className={`fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 ease-out transform translate-x-0 bg-zinc-800 lg:translate-x-0 lg:static lg:inset-0 ${
           isSidebarOpen ? "ease-out translate-x-0" : "ease-in -translate-x-full"
         }`}
       >
         <div className="flex items-center justify-center mt-10 text-center py-6">
-          <span className="mx-2 text-2xl font-semibold text-black">
-            Zach's Toolbox
+          <span className="mx-2 text-2xl text-white font-semibold">
+            Zachy's Toolbox
           </span>
         </div>
 
@@ -64,23 +65,23 @@ export const NavSidebar = () => {
                   title: "Timestamp Generator",
                   itemId: "/discord/timestamp-generator",
                   // Optional
-                  elemBefore: () => <FontAwesomeIcon icon={faUser} />
+                  elemBefore: () => <FontAwesomeIcon icon={faUser} />,
                 },
                 {
                   title: "Id to User",
                   itemId: "/discord/id-to-user",
-                  elemBefore: () => <FontAwesomeIcon icon={faClock} />
-                }
-              ]
+                  elemBefore: () => <FontAwesomeIcon icon={faClock} />,
+                },
+              ],
             },
             {
               title: "Time Tools",
               itemId: "/time",
-              elemBefore: () => <FontAwesomeIcon icon={faClock} />
-            }
+              elemBefore: () => <FontAwesomeIcon icon={faClock} />,
+            },
           ]}
         />
-{/* 
+        {/* 
         <div className="absolute bottom-0 w-full my-8">
           <Navigation
             activeItemId={location.pathname}
